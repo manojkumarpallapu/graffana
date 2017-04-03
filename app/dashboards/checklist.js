@@ -19,7 +19,7 @@ var window, document, ARGS, $, jQuery, moment, kbn;
 
 var pmwebd = location.protocol + "//" + location.hostname + ":" + location.port;
 var pmwebapi_url = "/pmapi/1/"; // context 1 = hardcoded to local: via checklist.sh
-var checklist_url = "/grafana/index.html#/dashboard/script/checklist.js";
+var checklist_url = "/index.html#/dashboard/script/checklist.js";
 
 function create_metric_panel(dashboard, node) {
     var metrics = node.pcp_metrics;
