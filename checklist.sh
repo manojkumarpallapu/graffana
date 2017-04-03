@@ -8,7 +8,7 @@ BROWSER="/usr/bin/firefox --new-instance"
 PCP_ENV=/etc/pcp.env
 CHECKLISTDIR=`dirname $0`
 CHECKLIST=$CHECKLISTDIR/checklist.json
-WEBAPPSDIR=`cd $CHECKLISTDIR/..; pwd`
+WEBAPPSDIR=`cd $CHECKLISTDIR; pwd`
 
 . $PCP_ENV
 
@@ -55,7 +55,7 @@ pids="$pids $!"
 
 echo "Started service pids $pids"
 
-cmd="$BROWSER http://localhost:${PMWEBD_PORT}/grafana/index.html#/dashboard/script/checklist.js"
+cmd="$BROWSER http://localhost:${PMWEBD_PORT}/index.html#/dashboard/script/checklist.js"
 echo "Starting web browser:"
 echo "$cmd"
 eval $cmd

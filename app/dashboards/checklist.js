@@ -162,7 +162,7 @@ return function (callback) {
     $.ajax({
         method: 'GET',
         cache: false,
-        url: pmwebd + "/checklist/checklist.json",
+        url: pmwebd + "/checklist.json",
         error: function (xhr,ajaxOptions,thrownError) {
             alert(xhr.statusText + ' ' + thrownError);
         }
