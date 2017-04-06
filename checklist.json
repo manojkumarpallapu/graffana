@@ -42,7 +42,7 @@
         },
 	{
             "name": "CPU - System Time",
-	    "description": "The CPU is executing application code",
+	    "description": "The CPU is executing system code",
             "pcp_metrics": ["cpukernel.*"],
             "pcp_metrics_log": ["cpukernel" ],
             "pcp_deriveds": [ "cpukernel = rate(kernel.percpu.cpu.sys)" ],
