@@ -53,6 +53,24 @@
 	    "urls": [ "https://access.redhat.com/articles/767563#cpu" ],
 	    "parents": ["CPU"]
         },
+	{
+            "name": "CPU - Tasks taking a lot time in user-space",
+	    "description": "CPU intensive tasks (user-space)",
+            "pcp_metrics": ["hotproc.psinfo.utime.*"],
+            "pcp_metrics_log": ["hotproc.psinfo.utime"],
+	    "urls": ["https://access.redhat.com/articles/781993"],
+	    "issues": ["The hotproc.control.config does not have default setting and need to be root to set it. Can set it with: sudo pmstore hotproc.control.config 'cpuburn > 0.05'"],
+	    "parents": ["CPU - User Time"]
+        },
+	{
+            "name": "CPU - Tasks taking a lot time in kernel-space",
+	    "description": "CPU intensive tasks (kernel-space)",
+            "pcp_metrics": ["hotproc.psinfo.stime.*"],
+            "pcp_metrics_log": ["hotproc.psinfo.stime"],
+	    "urls": ["https://access.redhat.com/articles/781993"],
+	    "issues": ["The hotproc.control.config does not have default setting and need to be root to set it. Can set it with: sudo pmstore hotproc.control.config 'cpuburn > 0.05'"],
+	    "parents": ["CPU - System Time"]
+        },
         {
             "name": "Storage",
 	    "description": "Excessive waiting for storage",
