@@ -71,6 +71,17 @@
 	    "issues": ["The hotproc.control.config does not have default setting and need to be root to set it. Can set it with: sudo pmstore hotproc.control.config 'cpuburn > 0.05'"],
 	    "parents": ["CPU - System Time"]
         },
+	{
+            "name": "CPU - Kernel SamePage Merging Daemon (ksmd)",
+	    "description": "Kernel SamePage Merging Daemon (ksmd) using too much time",
+            "pcp_metrics": ["hotproc.psinfo.ksmd.util.*" ],
+            "pcp_metrics_log": ["hotproc.psinfo.utime", "hotproc.psinfo.stime" ],
+	    "pcp_deriveds": [ "hotproc.psinfo.ksmd.util = rate(hotproc.psinfo.utime)+rate(hotproc.psinfo.stime)"],
+	    "urls": ["https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Virtualization_Tuning_and_Optimization_Guide/index.html"],
+	    "details": "The goal of the Kernel SamePage Merging Daemon (ksmd) is to reduce memory use by merging separate identical pages in one page.  However, this process can require significant amounts of CPU resources to compare pages of memory.  If the system has ample memory but less CPU resources, disabling ksmd or changing its configuration to reduce CPU use might be better options.",
+	    "issues": ["There can only be one hotproc predicate at a time.  For this to work would need  hotproc.control.config set to '(fname==\"ksmd\" && cpuburn > 0.10)'"],
+	    "parents": ["CPU"]
+        },
         {
             "name": "Storage",
 	    "description": "Excessive waiting for storage",
