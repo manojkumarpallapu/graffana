@@ -297,7 +297,7 @@
                                "value" : 0.01 },
 	    "urls": [ "https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf",
 		      "https://access.redhat.com/solutions/1241943" ],
-	    "details": "Each processor in the machine has a queue that stores packets recieved by the NIC but not yet processed by the Linux kernel network stack.  The size of each of the queues is specified by /proc/sys/net/core/netdev_max_backlog.  If a queue has netdev_max_backlog entries in it, any additional packets received from the NIC are dropped rather than added to the full queue.",
+	    "details": "Each processor in the machine has a queue that stores packets recieved by the Network Interface Card (NIC) but not yet processed by the Linux kernel network stack.  The size of each of the queues is specified by net.core.netdev_max_backlog.  If a queue has netdev_max_backlog entries in it, any additional packets received by the NIC are dropped rather than added to the already full queue.",
 	    "parents": ["Network RX"]
         },
         {
