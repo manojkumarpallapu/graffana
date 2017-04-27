@@ -14,7 +14,7 @@
         },
         {
             "name": "Start",
-	    "predicate": 1,
+	    "pcp_predicate": { },
             "pcp_metrics": ["kernel.all.load.1 minute"],
             "pcp_metrics_log": ["kernel.all.load"]
         },
@@ -161,7 +161,7 @@
 	    "pcp_metrics":  [ "mem.ratio.free"],
 	    "pcp_metrics_log":  [ "mem.util.free", "mem.physmem", "mem.ratio.free" ],
 	    "pcp_deriveds": [ "mem.ratio.free = mem.util.free/mem.physmem" ],
-	    "predicate": "",
+	    "pcp_predicate": { },
 	    "urls": "",
 	    "parents": ["Memory - swapping"]
         },
@@ -171,7 +171,7 @@
 	    "pcp_metrics":  [ "mem.numa.ratio.free.*" ],
 	    "pcp_metrics_log":  [ "mem.numa.util.free", "mem.numa.util.total",  "mem.numa.ratio.free" ],
 	    "pcp_deriveds": [ "mem.numa.ratio.free = mem.numa.util.free/mem.numa.util.total" ],
-	    "predicate": "",
+	    "pcp_predicate": "",
 	    "urls": ["https://access.redhat.com/solutions/406253", "https://access.redhat.com/solutions/465463" ],
 	    "parents": ["Memory - swapping"]
         },
@@ -181,7 +181,7 @@
 	    "pcp_metrics":  [ "mem.vmstat.pgsteal_direct",  "mem.vmstat.pgsteal_kswapd", "mem.vmstat.pgscan_direct",  "mem.vmstat.pgscan_kswapd" ],
 	    "pcp_metrics_log":  [ "mem.vmstat.pgsteal_direct",  "mem.vmstat.pgsteal_kswapd", "mem.vmstat.pgscan_direct",  "mem.vmstat.pgscan_kswapd" ],
 	    "pcp_deriveds": [ "vmeff = (mem.vmstat.pgsteal_direct+mem.vmstat.pgsteal_kswapd)/(mem.vmstat.pgscan_direct+mem.vmstat.pgscan_kswapd)"],
-	    "predicate": { "label":  "< 50% scan recovery rate",
+	    "pcp_predicate": { "label":  "< 50% scan recovery rate",
 			   "operator": "threshold_max",
 			   "metric": "vmeff",
 			   "value": 0.50 },
