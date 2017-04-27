@@ -2,10 +2,14 @@
     "nodes": [
         {
             ".name": "short title of node",
-	    ".description": "more detailed explanation of the issue",
-	    ".pcp_metrics": "information from pcp to determine whether problem",
-	    ".predicate": "test to determine if problem",
-	    ".urls": [ "list of extern URLs (for example kbase articles) for addressing the issue" ],
+	    ".description": "one line explanation of the issue",
+	    ".details": "a paragraph describing the cause and resolution",
+	    ".pcp_metrics": ["information from pcp to determine whether problem"],
+	    ",pcp_metrics_log": ["information from pcp to archive"],
+	    ".pcp_derived": ["locally computed metrics to simplify plots and predicates"],
+	    ".pcp_predicate": "test to determine if problem",
+	    ".urls": ["list of extern URLs (for example kbase articles) for addressing the issue"],
+	    ".issues": ["notes describing any problems with the node (for example why predicate is broken)"],
 	    ".parents": ["one or more nodes that would be checked before this node"]
         },
         {
