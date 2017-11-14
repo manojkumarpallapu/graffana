@@ -218,9 +218,8 @@ return function(callback) {
             markdown = markdown + "* [all hosts]("+multichart+assemble_multichart_url("","all hosts")+")";
             markdown = markdown + "\n\n";
             
-            var target_suffix = ".proc.nprocs";
             var last_base_hostname = "";
-            markdown = markdown + "\n### ... on individual hosts (flot graphs)\n\n";
+            markdown = markdown + "\n### ... on individual hosts seen during last year (flot graphs)\n\n";
             for (var hostname in hosts) {
                 if (hosts.hasOwnProperty(hostname)) {
                     hostdispname = pmwebd_demangle(pmwebd_J_mode, pmwebd_X_mode, hostname);
