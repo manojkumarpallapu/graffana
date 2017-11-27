@@ -92,7 +92,7 @@ for (var i = 0; i<targets.length; i++) {
     }
     
     var TITLE = titles[i];
-    if (TITLE == null) TITLE = TARGET.replace(',',' '); // can get wide :(
+    if (TITLE == null) TITLE = TARGET.replace(/,/g,' '); // can get wide :(
 
     var panel = {
         title: TITLE,
